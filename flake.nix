@@ -27,7 +27,7 @@
         RUSTFLAGS = "-C link-arg=-s";
       in
       {
-        coinmarket = {}: final.rustPlatform.buildRustPackage ({
+        coinmarket = final.rustPlatform.buildRustPackage ({
           inherit buildInputs RUSTFLAGS;
           pname = "coinmarket";
           version = "0.1.0";
@@ -57,7 +57,7 @@
                 overlays = [ rust-overlay.overlays.default self.overlay ];
               });
             in
-              pkgs.callPackage pkgs.coinmarket {};
+              pkgs.coinmarket;
         in {
           packages = {
             default = makePkgs "${system}";
