@@ -252,6 +252,31 @@ dependencies = [
 ]
 
 [[package]]
+name = "coinmarket"
+version = "0.1.0"
+dependencies = [
+ "binance-rs-async",
+ "color-eyre",
+ "crossterm",
+ "env_logger",
+ "futures",
+ "lazy_static",
+ "libc",
+ "log",
+ "ratatui",
+ "serde",
+ "serde_json",
+ "signal-hook",
+ "tokio",
+ "tokio-util",
+ "tracing",
+ "tracing-error",
+ "tracing-subscriber",
+ "tui-textarea",
+ "unicode-width 0.2.0",
+]
+
+[[package]]
 name = "color-eyre"
 version = "0.6.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -314,31 +339,6 @@ name = "core-foundation-sys"
 version = "0.8.7"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "773648b94d0e5d620f64f280777445740e61fe701025087ec8b57f45c791888b"
-
-[[package]]
-name = "cosmos-tui"
-version = "0.1.0"
-dependencies = [
- "binance-rs-async",
- "color-eyre",
- "crossterm",
- "env_logger",
- "futures",
- "lazy_static",
- "libc",
- "log",
- "ratatui",
- "serde",
- "serde_json",
- "signal-hook",
- "tokio",
- "tokio-util",
- "tracing",
- "tracing-error",
- "tracing-subscriber",
- "tui-textarea",
- "unicode-width 0.2.0",
-]
 
 [[package]]
 name = "cpufeatures"
