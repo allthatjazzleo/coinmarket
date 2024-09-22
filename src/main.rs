@@ -157,7 +157,7 @@ pub enum Action {
 
 // App ui render function
 fn ui(f: &mut Frame, app: &mut App) {
-    let rects = Layout::vertical([Constraint::Min(5), Constraint::Length(3)]).split(f.size());
+    let rects = Layout::vertical([Constraint::Min(5), Constraint::Length(3)]).split(f.area());
 
     app.set_colors();
 
@@ -193,8 +193,8 @@ fn centered_rect(r: Rect, percent_x: u16, percent_y: u16) -> Rect {
 }
 
 fn render_textarea(f: &mut Frame, app: &mut App) {
-    let area = centered_rect(f.size(), 20, 20);
-    f.render_widget(app.textarea.widget(), area);
+    let area = centered_rect(f.area(), 20, 20);
+    f.render_widget(&app.textarea, area);
 }
 
 fn render_table(f: &mut Frame, app: &mut App, area: Rect) {
@@ -251,7 +251,7 @@ fn render_scrollbar(f: &mut Frame, app: &mut App, area: Rect) {
             .orientation(ScrollbarOrientation::VerticalRight)
             .begin_symbol(None)
             .end_symbol(None),
-        area.inner(&Margin {
+        area.inner(Margin {
             vertical: 1,
             horizontal: 1,
         }),
